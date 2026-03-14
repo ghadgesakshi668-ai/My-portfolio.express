@@ -1,359 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sakshi Ghadge | Portfolio</title>
 
-<title>Sakshi Ghadge | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
 
-<style>
+    html{
+      scroll-behavior:smooth;
+    }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+    body{
+      background:#0f172a;
+      color:white;
+    }
 
-body{
-background:#0f172a;
-color:white;
-}
+    header{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:1000;
+      background:#020617;
+      padding:15px 0;
+      box-shadow:0 2px 10px rgba(0,0,0,0.2);
+    }
 
-/* NAVBAR */
+    nav{
+      max-width:1100px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:0 20px;
+    }
 
-header{
-position:fixed;
-width:100%;
-top:0;
-background:#020617;
-padding:15px 0;
-}
+    nav h1{
+      color:#38bdf8;
+      font-size:24px;
+    }
 
-nav{
-max-width:1100px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:0 20px;
-}
+    nav ul{
+      display:flex;
+      list-style:none;
+    }
 
-nav h1{
-color:#38bdf8;
-}
+    nav ul li{
+      margin-left:20px;
+    }
 
-nav ul{
-display:flex;
-list-style:none;
-}
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+    }
 
-nav ul li{
-margin-left:20px;
-}
+    nav ul li a:hover{
+      color:#38bdf8;
+    }
 
-nav ul li a{
-color:white;
-text-decoration:none;
-}
+    #home{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:100px 20px 40px;
+    }
 
-/* HOME */
+    .home-container{
+      max-width:1100px;
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:40px;
+    }
 
-#home{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding-top:60px;
-}
+    .home-text h2{
+      font-size:42px;
+      margin-bottom:10px;
+    }
 
-.home-container{
-max-width:1100px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 20px;
-}
+    .home-text span{
+      color:#38bdf8;
+    }
 
-.home-text h2{
-font-size:40px;
-}
+    .home-text p{
+      margin-top:10px;
+      color:#cbd5e1;
+      font-size:18px;
+    }
 
-.home-text span{
-color:#38bdf8;
-}
+    .btn{
+      display:inline-block;
+      margin-top:20px;
+      padding:12px 25px;
+      background:#38bdf8;
+      color:black;
+      border-radius:25px;
+      text-decoration:none;
+      font-weight:600;
+      border:none;
+      cursor:pointer;
+      transition:0.3s;
+    }
 
-.home-text p{
-margin-top:10px;
-color:#cbd5f5;
-}
+    .btn:hover{
+      background:#0ea5e9;
+      transform:translateY(-2px);
+    }
 
-.btn{
-display:inline-block;
-margin-top:20px;
-padding:10px 25px;
-background:#38bdf8;
-color:black;
-border-radius:25px;
-text-decoration:none;
-font-weight:600;
-}
+    .home-image img{
+      width:240px;
+      height:240px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid #38bdf8;
+      box-shadow:0 0 20px rgba(56,189,248,0.4);
+    }
 
-/* IMAGE */
+    section{
+      max-width:1100px;
+      margin:auto;
+      padding:80px 20px;
+    }
 
-.home-image img{
-width:220px;
-height:220px;
-border-radius:50%;
-object-fit:cover;
-border:5px solid #38bdf8;
-}
+    section h2{
+      text-align:center;
+      margin-bottom:30px;
+      color:#38bdf8;
+      font-size:32px;
+    }
 
-/* SECTIONS */
+    #about p,
+    #contact p{
+      text-align:center;
+      max-width:700px;
+      margin:auto;
+      color:#cbd5e1;
+      line-height:1.8;
+    }
 
-section{
-max-width:1100px;
-margin:auto;
-padding:80px 20px;
-}
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:20px;
+    }
 
-h2{
-text-align:center;
-margin-bottom:30px;
-}
+    .skill{
+      background:#1e293b;
+      padding:20px;
+      text-align:center;
+      border-radius:12px;
+      transition:0.3s;
+    }
 
-/* SKILLS */
+    .skill:hover{
+      transform:translateY(-5px);
+      background:#334155;
+    }
 
-.skills-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:20px;
-}
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
 
-.skill{
-background:#1e293b;
-padding:20px;
-text-align:center;
-border-radius:10px;
-}
+    .project{
+      background:#1e293b;
+      padding:20px;
+      border-radius:12px;
+      transition:0.3s;
+    }
 
-/* PROJECTS */
+    .project:hover{
+      transform:translateY(-5px);
+      background:#334155;
+    }
 
-.projects-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
+    .project h3{
+      margin-bottom:10px;
+      color:#38bdf8;
+    }
 
-.project{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-}
+    form{
+      max-width:500px;
+      margin:25px auto 0;
+    }
 
-/* CONTACT */
+    input, textarea{
+      width:100%;
+      padding:12px;
+      margin:10px 0;
+      border:none;
+      border-radius:8px;
+      outline:none;
+      font-size:15px;
+    }
 
-form{
-max-width:500px;
-margin:auto;
-}
+    textarea{
+      min-height:120px;
+      resize:vertical;
+    }
 
-input,textarea{
-width:100%;
-padding:10px;
-margin:10px 0;
-border:none;
-border-radius:5px;
-}
+    footer{
+      background:#020617;
+      text-align:center;
+      padding:18px;
+      color:#cbd5e1;
+      margin-top:30px;
+    }
 
-footer{
-background:#020617;
-text-align:center;
-padding:15px;
-}
+    @media(max-width:768px){
+      .home-container{
+        flex-direction:column-reverse;
+        text-align:center;
+      }
 
-@media(max-width:768px){
+      .home-text h2{
+        font-size:32px;
+      }
 
-.home-container{
-flex-direction:column;
-text-align:center;
-}
-
-nav ul{
-display:none;
-}
-
-}
-
-</style>
-
+      nav ul{
+        display:none;
+      }
+    }
+  </style>
 </head>
 
-
 <body>
-
-<header>
-
-<nav>
-
-<h1>Sakshi Ghadge</h1>
-
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-
-</nav>
-
-</header>
-
-
-<!-- HOME -->
-
-<section id="home">
-
-<div class="home-container">
-
-<div class="home-text">
-
-<h2>Hello, I'm <span>Sakshi Ghadge</span></h2>
-
-<p>Web Developer | Python | IoT Enthusiast</p>
-
-<a href="https://github.com/ghadgesakshi668-ai" target="_blank" class="btn">
-Visit My GitHub
-</a>
-
-</div>
-
-<div class="home-image">
-
-<img src="sakshi.jpg.jpeg">
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-<h2>About Me</h2>
-
-<p style="text-align:center; max-width:700px; margin:auto;">
-I am passionate about Web Development, Python programming and IoT security systems.
-I enjoy creating real-world projects and continuously learning new technologies.
-</p>
-
-</section>
-
-
-<!-- SKILLS -->
-
-<section id="skills">
-
-<h2>My Skills</h2>
-
-<div class="skills-grid">
-
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">JavaScript</div>
-<div class="skill">Python</div>
-<div class="skill">IoT</div>
-<div class="skill">Git & GitHub</div>
-
-</div>
-
-</section>
-
-
-<!-- PROJECTS -->
-
-<section id="projects">
-
-<h2>Projects</h2>
-
-<div class="projects-grid">
-
-<div class="project">
-
-<h3>Tamper Detection System</h3>
-
-<p>IoT based system to detect unauthorized energy meter access.</p>
-
-</div>
-
-<div class="project">
-
-<h3>Portfolio Website</h3>
-
-<p>Personal website built using HTML and CSS.</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-<h2>Contact Me</h2>
-
-<p style="text-align:center">
-Email: <b>ghadgesakshi668@gmail.com</b>
-</p>
-
-<form onsubmit="sendMessage(event)">
-
-<input type="text" id="name" placeholder="Your Name" required>
-
-<input type="email" id="email" placeholder="Your Email" required>
-
-<textarea id="message" placeholder="Your Message"></textarea>
-
-<button type="submit" class="btn">Send</button>
-
-</form>
-
-</section>
-
-
-<footer>
-
-<p>© 2026 Sakshi Ghadge</p>
-
-</footer>
-
-
-<script>
-
-function sendMessage(e){
-
-e.preventDefault()
-
-let name=document.getElementById("name").value
-
-alert("Thank you "+name+"! Message sent.")
-
-document.querySelector("form").reset()
-
-}
-
-</script>
-
-
+  <header>
+    <nav>
+      <h1>Sakshi Ghadge</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="/skills">More Skills</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <div class="home-container">
+      <div class="home-text">
+        <h2>Hello, I'm <span>Sakshi Ghadge</span></h2>
+        <p>Web Developer | Python | IoT Enthusiast</p>
+
+        <a href="https://github.com/ghadgesakshi668-ai" target="_blank" class="btn">
+          Visit My GitHub
+        </a>
+      </div>
+
+      <div class="home-image">
+        <img src="/images/sakshi.jpg.jpeg" alt="Sakshi Ghadge" />
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am passionate about Web Development, Python programming and IoT security systems.
+      I enjoy creating real-world projects and continuously learning new technologies.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>My Skills</h2>
+
+    <div class="skills-grid">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Python</div>
+      <div class="skill">IoT</div>
+      <div class="skill">Git & GitHub</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="projects-grid">
+      <div class="project">
+        <h3>Tamper Detection System</h3>
+        <p>IoT based system to detect unauthorized energy meter access.</p>
+      </div>
+
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>Personal website built using HTML, CSS and Express.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+
+    <p>Email: <b>ghadgesakshi668@gmail.com</b></p>
+
+    <form onsubmit="sendMessage(event)">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2026 Sakshi Ghadge. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function sendMessage(e){
+      e.preventDefault();
+
+      let name = document.getElementById("name").value;
+      alert("Thank you " + name + "! Message sent successfully.");
+      document.querySelector("form").reset();
+    }
+  </script>
 </body>
 </html>
